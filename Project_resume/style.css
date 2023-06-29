@@ -1,0 +1,116 @@
+*{
+    font-family: Manga Temple;
+}
+.intro {
+  text-align: center;
+}
+#main {
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: flex;
+}
+#image {
+  background-color: orange;
+  width: 40%;
+  height: auto;
+}
+#main > div img {
+  width: 100%;
+}
+#content {
+  padding-left: 10px;
+  background-color: #e9d8cd;
+  width: 60%;
+  height: auto;
+}
+#intrest {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#intrest > div {
+  border-top: 2px solid orange;
+  border-bottom: 2px solid blue;
+  border-left: 2px solid red;
+  border-radius: 150px;
+  width: 150px;
+  height: 150px;
+}
+p {
+  font-size: 22px;
+  margin-top: 40%;
+  text-align: center;
+}
+#main h2 {
+  color: rgb(0, 106, 255);
+}
+hr {
+  color: orange;
+}
+#wiki{
+    margin-top: 0%;
+    text-align: center;
+}
+button{
+    background-color: orange;
+    font-size: 15px;
+}
+button:hover{
+    color: red;
+}
+
+@media all and (min-width: 320px) and (max-width: 520px) {
+  #main {
+    flex-direction: column;
+  }
+  #image {
+    width: 100%;
+  }
+  #content {
+    width: 100%;
+  }
+  #intrest > div {
+    border-top: 2px solid orange;
+    border-bottom: 2px solid blue;
+    border-left: 2px solid red;
+    border-radius: 90px;
+    width: 90px;
+    height: 90px;
+  }
+  p {
+    font-size: 18px;
+    margin-top: 40%;
+    text-align: center;
+  }
+  #intrest {
+    width: 100%;
+  }
+}
+@media all and (min-width: 521px) and (max-width: 750px) {
+  #main {
+    flex-direction: column;
+  }
+  #image {
+    width: 100%;
+  }
+  #content {
+    width: 100%;
+  }
+  #intrest > div {
+    border-top: 2px solid orange;
+    border-bottom: 2px solid blue;
+    border-left: 2px solid red;
+    border-radius: 120px;
+    width: 120px;
+    height: 120px;
+  }
+  p {
+    font-size: 20px;
+    margin-top: 40%;
+    text-align: center;
+  }
+  #intrest {
+    width: 100%;
+  }
+}
