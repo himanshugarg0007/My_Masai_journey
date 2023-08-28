@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini_calculator</title>
+    <style>
+        #input{
+            
+            margin: auto;
+            width: 40%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+        #button{
+            margin: auto;
+            width: 40%;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        h3{
+            text-align: center;
+        }
+        #display{
+            padding: 10px;
+            margin: auto;
+            margin-bottom: 10px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 3px solid rgb(97, 67, 231);
+        }
+    </style>
+</head>
+<body>
+    <div id="display">
+        <h3>Display</h3>
+    <input id="dis" type="number" value=0>
+    </div>
+    <div id="input">
+        <input id="one" type="number" placeholder="enter 1st number" value=0>
+        <input id="two" type="number" placeholder="enter 2nd number" value=0>
+    </div>
+    <div id="button">
+        <button onclick="add()">Add</button>
+        <button onclick="sub()">subtract</button>
+        <button onclick="mul()">multiply</button>
+        <button onclick="div()">divide</button>
+    </div>
+
+    
+</body>
+<script>
+    let a = document.getElementById("one");
+    let b = document.getElementById("two");
+    let d = document.getElementById("dis");
+
+       function add(){
+        d.value = a.value + b.value;
+    }
+    function sub(){
+        d.value = a.value - b.value;
+    }
+    function mul(){
+        d.value = a.value * b.value;
+    }
+    function div(){
+        d.value = a.value / b.value;
+    }
+
+
+</script>
+</html>
