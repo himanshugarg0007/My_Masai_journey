@@ -59,16 +59,20 @@
     let d = document.getElementById("dis");
 
        function add(){
-        d.value = a.value + b.value;
+        d.value = +(a.value) + +(b.value);
+        alert(d.value = +(a.value) + +(b.value))
     }
     function sub(){
         d.value = a.value - b.value;
+        alert(d.value = a.value - b.value)
     }
     function mul(){
         d.value = a.value * b.value;
+        alert(d.value = a.value * b.value)
     }
     function div(){
         d.value = a.value / b.value;
+        alert(d.value = a.value / b.value)
     }
 
 
