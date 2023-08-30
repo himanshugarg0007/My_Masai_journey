@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_submit</title>
+</head>
+<body>
+    <input type="text" id="myinp" placeholder="enter your name">
+    <button onclick="sub()" id="mybutton">Submit</button>
+    <h1 id="dis">Display</h1>
+</body>
+<script>
+    function sub(){
+        let name = document.getElementById("myinp").value;
+        let display = document.getElementById("dis");
+        display.innerText = "Entered value:  " + name;
+        alert(display.innerText);
+    }
+
+</script>
+</html>
