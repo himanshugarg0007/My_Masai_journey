@@ -1,114 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>masai_calculator</title>
     <style>
-        #head{
-            text-align: center;
-            font-size: 60px;
-            font-weight: 800;
-            color: rgb(12, 137, 137);
-
-        }
-        #main{
-            width: 30%;
-            margin: auto;
-            height: 450px;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-        #display{
-            margin: auto;
-            width: 80%;
-            height: 100px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        }
-        #key{
-            width: 80%;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin: auto;
-            margin-bottom: 20px;
-        }
-        #key > div{
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-        #key h2{
-            text-align: center;
-        }
-        #c{
-            background-color: red ;
-        }
-        .math{
-            background-color: black;
-        }
-        .math h2{
-            color: aliceblue;
-        }
+      #head {
+        text-align: center;
+        font-size: 60px;
+        font-weight: 800;
+        color: rgb(12, 137, 137);
+      }
+      #main {
+        width: 30%;
+        margin: auto;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 5px;
+      }
+      #display {
+        margin: auto;
+        width: 80%;
+        height: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 1px solid black;
+        text-align: center;
+        padding: 20px;
+      }
+      #key {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+      #key > div {
+        height: 30px;
+        text-align: center;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #c {
+        width: 20%;
+        height: 30px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        background-color: red;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 2px;
+        margin-bottom: 20px;
+      }
+      #operator {
+        width: 80%;
+        margin: auto;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-bottom: 10px;
+      }
+      #operator > div {
+        height: 30px;
+        text-align: center;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: antiquewhite;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1 id="head">masai calculator</h1>
     <div id="main">
-        <div id="display"></div>
-        <div id="key">
-            <div>
-                <h2>1</h2>
-            </div>
-            <div>
-                <h2>2</h2>
-            </div>
-            <div>
-                <h2>3</h2>
-            </div>
-            <div class="math">
-                <h2>+</h2>
-            </div>
-            <div>
-                <h2>4</h2>
-            </div>
-            <div>
-                <h2>5</h2>
-            </div>
-            <div>
-                <h2>6</h2>
-            </div>
-            <div class="math">
-                <h2>-</h2>
-            </div>
-            <div>
-                <h2>7</h2>
-            </div>
-            <div>
-                <h2>8</h2>
-            </div>
-            <div>
-                <h2>9</h2>
-            </div>
-            <div class="math">
-                <h2>x</h2>
-            </div>
-            <div id="c">
-                <h2>C</h2>
-            </div>
-            <div>
-                <h2>0</h2>
-            </div>
-            <div class="math">
-                <h2>=</h2>
-            </div>
-            <div class="math">
-                <h2>/</h2>
-            </div>
-        </div>
-
+      <div id="display">
+        <h2 id="dis">Enter value</h2>
+      </div>
+      <div id="key">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div style="background-color: rgb(221, 221, 95)">=</div>
+      </div>
+      <div id="operator">
+        <div>+</div>
+        <div>-</div>
+        <div>*</div>
+        <div>/</div>
+      </div>
+      <div id="c" onclick="reset()">AC</div>
     </div>
-</body>
+  </body>
+  <script>
+    let dis = document.getElementById("dis");
+    let key = document.querySelectorAll("#key > div");
+    let operator = document.querySelectorAll("#operator > div");
+    let equal = key[key.length - 1];
+    // now take variables for input
+    let first = "";
+    let sec = "";
+    let ops = "";
+    let flag = true;
+
+    for (let i = 0; i < key.length - 1; i++) {
+      key[i].addEventListener("click", function () {
+        if (flag == true) {
+          first += key[i].innerText;
+          dis.innerText = first;
+          console.log(dis.innerText);
+        } else {
+          sec += key[i].innerText;
+          dis.innerText = sec;
+        }
+      });
+    }
+
+    for (let i = 0; i < operator.length; i++) {
+      operator[i].addEventListener("click", function () {
+        flag = false;
+        ops += operator[i].innerText;
+        dis.innerText = ops;
+      });
+    }
+    equal.addEventListener("click", function () {
+      if (ops.length > 1) {
+        first = "";
+        sec = "";
+        ops = "";
+        flag = true;
+        dis.innerText = "Enter valid value";
+      }
+     else dis.innerText = eval(first + ops + sec);
+    });
+    function reset() {
+      first = "";
+      sec = "";
+      ops = "";
+      flag = true;
+      dis.innerText = "Enter value";
+    }
+  </script>
 </html>
