@@ -28,6 +28,9 @@
         let h1 = document.querySelector("h1");
         let hthree = document.getElementsByTagName("h3");
         let hfive = document.getElementsByTagName("h5");
+        let green = document.querySelectorAll(".green");
+        let red = document.querySelectorAll(".red");
+        let blue = document.querySelectorAll(".blue");
 
 
       function changeH1() {
@@ -52,14 +55,23 @@
 
       function changeGreen() {
         // all the elements with the class green should change to green
+        for(let i=0; i<green.length; i++){
+          green[i].style.color = "green";
+        }
       }
 
       function changeRed() {
         // all the elements with the class red should change to red
+        for(let i=0; i<red.length; i++){
+          red[i].style.color = "red";
+        }
       }
 
       function changeBlue() {
         // all the elements with the class blue should change to blue
+        for(let i=0; i<blue.length; i++){
+          blue[i].style.color="#7091F5";
+        }
       }
     </script>
   </body>
