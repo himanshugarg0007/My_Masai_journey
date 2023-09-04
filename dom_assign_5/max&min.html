@@ -1,11 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>min&max LEADERBOARD</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      #sc {
+        text-align: center;
+      }
+      #min {
+        width: 31%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      #sboard {
+        width: 35%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      #sboard > div {
+        width: 20%;
+        height: 50px;
+        border: 1px solid black;
+        color: black;
+        font-size: larger;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #box1 {
+        background-color: red;
+      }
+      #box2 {
+        background-color: green;
+      }
+      #enter {
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        margin: auto;
+        height: 70px;
+        border: 1px solid black;
+        background-color: grey;
+        margin-bottom: 20px;
+        align-items: center;
+        font-size: large;
+        font-weight: bold;
+      }
+      #key {
+        margin: auto;
+        width: 25%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        text-align: center;
+      }
+      #key > div {
+        border: 1px solid black;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
+        font-weight: bold;
+      }
+      #key > div:last-child:nth-child(3n + 1) {
+        grid-column-end: -2;
+      }
+      button{
+        width: 25%;
+        height: 50px;
+        font-size: xx-large;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+      }
+      .orange{
+        background-color: orangered;
+        color: black;
+      }
+      .green{
+        background-color: green;
+        color: black;
+      }
+      #voilet{
+        background-color: rgb(109, 8, 115);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sboard">
+      <div id="box1">min</div>
+      <div id="box2">max</div>
+    </div>
+    <div id="min">
+      <h2>min</h2>
+      <h2>max</h2>
+    </div>
+    <h2 id="sc">SCORE</h2>
+    <div id="enter">SCORE</div>
+    <div id="key">
+      <div class="orange">1</div>
+      <div class="green">2</div>
+      <div class="orange">3</div>
+      <div class="green">4</div>
+      <div class="green">5</div>
+      <div class="green">6</div>
+      <div class="orange">7</div>
+      <div class="green">8</div>
+      <div class="orange">9</div>
+      <div id="voilet">0</div>
+    </div>
+    <button onclick="sub()">ENTER</button>
+  </body>
+  <script>
+    let min = document.getElementById("box1");
+    let max = document.getElementById("box2");
+    let sc = document.getElementById("enter");
+    let key = document.querySelectorAll("#key > div");
+    let minimam = Infinity;
+    let maximam = -Infinity;
+    let score = "";
+    for(let i=0; i<key.length; i++){
+        key[i].addEventListener("click", function(){
+            key[i]
+        })
+    }
+  </script>
 </html>
