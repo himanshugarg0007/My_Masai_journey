@@ -71,7 +71,7 @@
       #key > div:last-child:nth-child(3n + 1) {
         grid-column-end: -2;
       }
-      button{
+      button {
         width: 25%;
         height: 50px;
         font-size: xx-large;
@@ -84,15 +84,15 @@
         background-color: black;
         color: white;
       }
-      .orange{
+      .orange {
         background-color: orangered;
         color: black;
       }
-      .green{
+      .green {
         background-color: green;
         color: black;
       }
-      .voilet{
+      .voilet {
         background-color: rgb(109, 8, 115);
         color: black;
       }
@@ -129,28 +129,26 @@
     let dis = document.getElementById("enter");
     let key = document.querySelectorAll("#key > div");
     let score = "";
-    for(let i=0; i<key.length; i++){
-        key[i].addEventListener("click", function(){
-            score += key[i].innerText;
-            dis.innerText = score;
-        })
+    for (let i = 0; i < key.length; i++) {
+      key[i].addEventListener("click", function () {
+        score += key[i].innerText;
+        dis.innerText = score;
+      });
     }
-    function sub(){
-            if(score < min.innerText){
-                min.innerText = score;
-                dis.innerText = "enter new";
-                score = ""
-            }
-            if(score > max.innerText){
-                max.innerText = score;
-                dis.innerText = "enter new";
-                score = ""
-            }
-            if(score > min.innerText && score < max.innerText ){
-                dis.innerText = "enter again";
-                score = "";
-                alert("enter minimam or maximam")
-            }
-        }
+    function sub() {
+      if (+score > +min.innerText && +score < +max.innerText) {
+        dis.innerText = "enter again";
+        score = "";
+        alert("enter minimam or maximam");
+      } else if (+score < +min.innerText) {
+        min.innerText = score;
+        dis.innerText = "enter new";
+        score = "";
+      } else if (+score > +max.innerText) {
+        max.innerText = score;
+        dis.innerText = "enter new";
+        score = "";
+      }
+    }
   </script>
 </html>
