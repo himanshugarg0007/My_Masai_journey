@@ -92,7 +92,7 @@
         background-color: green;
         color: black;
       }
-      #voilet{
+      .voilet{
         background-color: rgb(109, 8, 115);
         color: black;
       }
@@ -100,8 +100,8 @@
   </head>
   <body>
     <div id="sboard">
-      <div id="box1">min</div>
-      <div id="box2">max</div>
+      <div id="box1">50</div>
+      <div id="box2">100</div>
     </div>
     <div id="min">
       <h2>min</h2>
@@ -119,22 +119,38 @@
       <div class="orange">7</div>
       <div class="green">8</div>
       <div class="orange">9</div>
-      <div id="voilet">0</div>
+      <div class="voilet">0</div>
     </div>
     <button onclick="sub()">ENTER</button>
   </body>
   <script>
     let min = document.getElementById("box1");
     let max = document.getElementById("box2");
-    let sc = document.getElementById("enter");
+    let dis = document.getElementById("enter");
     let key = document.querySelectorAll("#key > div");
-    let minimam = Infinity;
-    let maximam = -Infinity;
     let score = "";
     for(let i=0; i<key.length; i++){
         key[i].addEventListener("click", function(){
-            key[i]
+            score += key[i].innerText;
+            dis.innerText = score;
         })
     }
+    function sub(){
+            if(score < min.innerText){
+                min.innerText = score;
+                dis.innerText = "enter new";
+                score = ""
+            }
+            if(score > max.innerText){
+                max.innerText = score;
+                dis.innerText = "enter new";
+                score = ""
+            }
+            if(score > min.innerText && score < max.innerText ){
+                dis.innerText = "enter again";
+                score = "";
+                alert("enter minimam or maximam")
+            }
+        }
   </script>
 </html>
