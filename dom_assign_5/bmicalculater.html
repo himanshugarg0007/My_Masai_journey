@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bmi_calculator</title>
   </head>
-  <body>
+  <body style="padding-left: 40%">
     <h1>Check your BMI <br />(BodyMass Index)</h1>
     <h3>Enter your weight and height below to check your BMI results</h3>
     <h3>Put your weight in here (KG)</h3>
@@ -23,18 +23,18 @@
       let hei = document.getElementById("h").value / 100;
       let ans = document.getElementById("ans");
       let bmi = wei / (hei * hei);
-      let final = bmi.toFixed(1)
-      if(final <= 18.4){
-        ans.innerText = "Your BMI is"+ final + "which means You are Under Weight.";
-      }
-      else if(final >=18.5 && final <=24.9){
-        ans.innerText = "Your BMI is"+ final + "which means You are Normal Weight.";
-      }
-      else if(final>=25 && final<=29.9){
-        ans.innerText = "Your BMI is"+ final + "which means You are Overweight.";
-      }
-      else if(final>=30){
-        ans.innerText = "Your BMI is "+ final + " which means You are Obese.";
+      let final = bmi.toFixed(1);
+      if (+final <= 18.4) {
+        ans.innerText =
+          "Your BMI is" + final + "which means You are Under Weight.";
+      } else if (+final >= 18.5 && +final <= 24.9) {
+        ans.innerText =
+          "Your BMI is" + final + "which means You are Normal Weight.";
+      } else if (+final >= 25 && +final <= 29.9) {
+        ans.innerText =
+          "Your BMI is" + final + "which means You are Overweight.";
+      } else if (+final >= 30) {
+        ans.innerText = "Your BMI is " + final + " which means You are Obese.";
       }
     }
   </script>
