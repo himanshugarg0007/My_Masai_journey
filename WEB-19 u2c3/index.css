@@ -1,0 +1,51 @@
+/* Fill CSS here */
+h1{
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(78, 78, 224);
+}
+form{
+    width: 180px;
+    padding: 10px;
+    background-color: rgba(229, 219, 219, 0.942);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 2%;
+}
+form > input{
+    margin-bottom: 10px;
+}
+div{
+    display: flex;
+    justify-content:space-around;
+
+}
+#mainTr{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    color: aliceblue;
+    border: 0px;
+}
+#mainTr > th{
+    padding: 7px;
+    background-color: rgb(78, 78, 224);
+}
+tr{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    color: black;
+    border:  1px solid black;
+}
+td{
+    padding: 10px;
+}
+#sub{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    border-radius: 9px;
+    background-color: rgb(78, 78, 224);
+    color: aliceblue;
+}
