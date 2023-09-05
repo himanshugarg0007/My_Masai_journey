@@ -23,10 +23,10 @@ form.addEventListener("submit", function (e) {
         tr.append(td1, td2);
         tbody.append(tr)
         if (select.value == "High") {
-            tr.style.backgroundColor = "red";
+            td2.style.backgroundColor = "red";
         } 
         else if(select.value == "Low") {
-            tr.style.backgroundColor = "green"
+            td2.style.backgroundColor = "green"
         }
     })
     
