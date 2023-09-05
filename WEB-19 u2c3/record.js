@@ -51,6 +51,12 @@ myform.addEventListener("submit", function(e){
     td8.innerText = "Delete";
     td8.addEventListener("click",function(){
         tr.innerText = "";
+        for(let i=0;i<alldata.length;i++){
+            if(alldata[i].Eid == e.Eid){
+                alldata.splice(i,1);
+                break;
+            }
+        }
     })
     tr.append(td1,td2,td3,td4,td5,td6,td7,td8);
     tbody.append(tr);
