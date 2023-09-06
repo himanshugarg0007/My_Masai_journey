@@ -13,13 +13,11 @@ form.addEventListener("submit", function (e) {
         selection: select.value,
     }
     alltask.push(data);
-    tbody.innerHTML = "";
-    alltask.map((e) => {
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
         let td2 = document.createElement("td");
-        td1.innerText = e.input;
-        td2.innerText = e.selection;
+        td1.innerText = data.input;
+        td2.innerText = data.selection;
         tr.append(td1, td2);
         tbody.append(tr)
         if (select.value == "High") {
@@ -28,12 +26,7 @@ form.addEventListener("submit", function (e) {
         else if(select.value == "Low") {
             td2.style.backgroundColor = "green"
         }
-    })
-    
-
-
     takeinput.value = "";
     select.value = "";
-
 })
 

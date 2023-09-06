@@ -12,6 +12,7 @@ let tbody = document.querySelector("tbody");
 let alldata = [];
 myform.addEventListener("submit", function(e){
     e.preventDefault();
+    let flag = true;
     let data = {
         Ename : emName.value,
         Eid : emId.value,
@@ -20,7 +21,21 @@ myform.addEventListener("submit", function(e){
         Email : email.value,
         Mob : mob.value,
     };
-    alldata.push(data);
+    for(let i of alldata){
+        if(i.Eid==data.Eid){
+            alert("Id already exist, id should be unique");
+            flag = false;
+            break;
+        }
+    }
+    if(flag){
+    if(emName==""||emId==""||dep.value==""||exp.value==""||email.value==""||mob.value=="") {
+        alert("Fill all the details");
+    }
+    else{
+        alldata.push(data);
+    }
+    
     tbody.innerHTML = "";
     alldata.map((e)=>{
     let tr = document.createElement("tr");
@@ -61,6 +76,7 @@ myform.addEventListener("submit", function(e){
     tr.append(td1,td2,td3,td4,td5,td6,td7,td8);
     tbody.append(tr);
 })
+    }
 emName.value = "";
 emId.value = "";
 dep.value = "";
