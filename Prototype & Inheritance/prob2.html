@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype & Inheritance</title>
+</head>
+<body>
+    <h1>Prototype & Inheritance</h1>
+</body>
+<script>
+    function vehicle(brand, model, speed, fuelType){
+        this.brand=brand;
+        this.model=model;
+        this.speed=speed;
+        this.fuelType=fuelType;
+    }
+vehicle.prototype.accelerate=function(){
+    this.speed ++;
+    console.log("accelerating");
+}
+vehicle.prototype.breake = function(){
+    this.speed --;
+    console.log("appling breaks");
+}
+vehicle.prototype.refuel = function(){
+    console.log("vehicle is refueling");
+}
+let car1 = new vehicle("Toyoto", "fortuner", 100, "Diesel");
+let car2 = new vehicle("mercedise", "clss", 150, "petrol");
+
+function car(brand, model, speed, fuelType, numberOfWheels){
+    // let obj = 
+    vehicle.call(this,brand, model, speed, fuelType);
+    // Object.setPrototypeOf(obj, car.prototype);
+    this.numberOfWheels = numberOfWheels;
+    // return obj;
+}
+Object.setPrototypeOf(car.prototype, vehicle.prototype);
+car.prototype.honk = function(){
+    console.log(`${this.model} is honking`)
+}
+let car3 = new car("Maruthi","Swift",90,"petrol",4);
+
+function Airplane(brand, model, speed, fuelType,numberOfEngines,hasLandingGear){
+    vehicle.call(this,brand, model, speed, fuelType);
+    this.numberOfEngines = numberOfEngines;
+    this.hasLandingGear = hasLandingGear;
+}
+Object.setPrototypeOf(Airplane.prototype, vehicle.prototype);
+Airplane.prototype.takeoff= function(){
+    console.log("airplane is taking off");
+}
+let plane1 = new Airplane("spice jet","j75",700,"jet fule",2,true);
+console.log(plane1)
+
+plane1.takeoff()
+plane1.refuel()
+</script>
+</html>
