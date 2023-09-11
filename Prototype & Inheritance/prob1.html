@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automobile Inheritance Model</title>
+  </head>
+  <body>
+    <h1>Automobile Inheritance Model</h1>
+  </body>
+  <script>
+    function vehicle(engine, model, topspeed, fuelType) {
+      this.engine = engine;
+      this.model = model;
+      this.topspeed = topspeed;
+      this.fuelType = fuelType;
+    }
+    vehicle.prototype.refuel = function () {
+      console.log("vehicle is refueling");
+    };
+    vehicle.prototype.run = function () {
+      console.log(`Run check of ${this.model} is done`);
+    };
+    let car1 = new vehicle("1200cc", "tataIndica", 110, "diesle");
+    car1.run()
+
+    function newvehicle(engine, model, topspeed, fuelType , fuelTransmitionType){
+        vehicle.call(this, engine, model, topspeed, fuelType )
+       
+        this.fuelTransmitionType = fuelTransmitionType;
+    }
+
+    let obj = Object.create(car1);
+    obj.musicSystem = "sony";
+    obj.wheelsType = "Aloy";
+
+    let car2 = new newvehicle("1200cc","Zest",120,"petrol","fuelInjector")
+    console.log(car2)
+
+    console.log(obj)
+    
+    
+  </script>
+</html>
