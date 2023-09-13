@@ -47,7 +47,8 @@ function Airplane(brand, model, speed, fuelType,numberOfEngines,hasLandingGear){
     this.numberOfEngines = numberOfEngines;
     this.hasLandingGear = hasLandingGear;
 }
-Object.setPrototypeOf(Airplane.prototype, vehicle.prototype);
+
+Airplane.prototype = Object.create(vehicle.prototype)
 Airplane.prototype.takeoff= function(){
     console.log("airplane is taking off");
 }
