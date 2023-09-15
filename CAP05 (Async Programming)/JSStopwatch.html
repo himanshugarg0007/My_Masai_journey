@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #display {
+        margin: auto;
+        border: 1px solid black;
+        width: 80px;
+        height: auto;
+        font-size: x-large;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      button {
+        margin: auto;
+        width: 70px;
+        height: 30px;
+        font-size: large;
+        align-items: center;
+      }
+      #op{
+        margin-top: 20px;
+        margin: auto;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Stopwatch</h1>
+    <div id="display">0</div>
+    <div id="op">
+      <button id="st" onclick="start()">start</button>
+      <button onclick="pause()">pause</button>
+      <button onclick="reset()">reset</button>
+    </div>
+  </body>
+  <script>
+    let st = document.getElementById("st");
+    let dis = document.getElementById("display")
+    let second = 0;
+    let flag = false;
+    let timer = null;
+    function start(){
+        if(flag==false){
+            flag = true;
+            st.textContent= "start";
+        timer = setInterval(()=>{
+            second++
+            dis.textContent = second;
+        },1000)
+    }
+    }
+    function pause(){
+        if(dis.textContent==0){}
+        else{
+        st.textContent="resume";
+        flag=false;
+        clearInterval(timer)
+        }
+    }
+    function reset(){
+        st.textContent="start";
+        flag = false;
+        clearInterval(timer);
+        dis.textContent=0;
+        second = 0;
+    }
+  </script>
+</html>
