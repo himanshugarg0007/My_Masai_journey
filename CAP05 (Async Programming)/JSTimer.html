@@ -8,10 +8,57 @@
         h1{
             text-align: center;
         }
+        #display{
+            border: 1px solid black;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            width: 30%;
+            height: 60px;
+            align-items: center;
+            padding: auto;
+            font-size: x-large;
+            margin-bottom: 20px;
+        }
+        #inp{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        #inp > input{
+            height: 30px;
+        }
+        #butt{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #butt > button{
+            width: 80px;
+            height: 30px;
+            font-size: large;
+            font-weight: bold;
+            background-color: aqua;
+        }
+
     </style>
 </head>
 <body>
     <h1>JS Timer</h1>
+    <div id="display">
+        dis
+    </div>
+    <div id="inp">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </div>
+    <div id="butt">
+        <button>start</button>
+        <button>pause</button>
+        <button>reset</button>
+    </div>
     
 </body>
 <script>
