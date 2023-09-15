@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #dis {
+        margin: auto;
+        border: 1px solid red;
+        width: 1200px;
+        height: 700px;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+      #image {
+        width: 100%;
+        height: 100%;
+      }
+      #op {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        gap: 10px;
+      }
+      #op > button {
+        width: 150px;
+        height: 40px;
+        font-size: x-large;
+        align-items: center;
+        font-weight: bold;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Slide Show</h1>
+    <div id="dis">
+      <img id="image" src="" />
+    </div>
+    <div id="op">
+      <button onclick="left()">Left</button>
+      <button id="st" onclick="start()">Start Slide</button>
+      <button onclick="right()">Right</button>
+    </div>
+  </body>
+  <script>
+    let st = document.getElementById("st");
+    let dis = document.getElementById("image");
+    let flag = false;
+    let slideShow = null;
+    let imgarr = [
+      "https://r4.wallpaperflare.com/wallpaper/142/751/831/landscape-anime-digital-art-fantasy-art-wallpaper-9b468c3dc3116f4905f43bc9cddc0cf0.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/295/653/112/digital-art-asian-architecture-fantasy-art-town-wallpaper-8990d82dd1cadd3b8627d88f801186cd.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/834/299/692/city-lights-girl-moon-wallpaper-e178a9faa68bf35ee7e3f2afc50e43fc.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/545/336/903/digital-digital-art-artwork-illustration-futuristic-hd-wallpaper-0450d8d4ab63ba2b663943e5ca1883f9.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/687/194/405/digital-digital-art-artwork-illustration-concept-art-hd-wallpaper-946c84a81dd96229f41324f97951629d.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/86/168/901/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-d886ddd830307c18a0ac615e0872d4da.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-b3abc35d0d699b056fa6b247589b18a8.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/952/786/491/nature-landscape-forest-river-wallpaper-36399499392b36fdd6e46796616d6c0d.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/911/205/312/artwork-digital-art-landscape-river-wallpaper-34bcf418eda962a9c4e374a9392182dd.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/616/719/787/stars-planet-space-mountains-wallpaper-c876fdf840f0fcd8d0bcd1be0802a4ea.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/618/385/72/fantasy-art-science-fiction-space-suit-artwork-wallpaper-694078ed71da6dcb06f7f89fc0e106dd.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/114/1008/41/one-piece-monkey-d-luffy-hd-wallpaper-9ef4b77cec0a1f27d70d79da37c4809a.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/642/695/642/anime-demon-slayer-kimetsu-no-yaiba-giyuu-tomioka-hd-wallpaper-3d168c86bf53609f96e6ec093ffdb04e.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/556/382/458/fantasy-art-artwork-fan-art-science-fiction-wallpaper-a876bda8c0a03c38609c515e38f2347a.jpg",
+      "https://r4.wallpaperflare.com/wallpaper/589/141/118/minimalism-fantasy-art-digital-art-artwork-wallpaper-c9d0582d21da6deb2607d8cf50f136bd.jpg"
+    ];
+
+    let i = 0;
+
+    function slide() {
+      if (i == imgarr.length) {
+        i = 0;
+      } else {
+        st.style.backgroundColor = "green";
+        dis.src = imgarr[i++];
+      }
+    }
+
+    function start() {
+      if (flag == false) {
+        st.textContent = "pause";
+        flag = true;
+        slideShow = setInterval(slide, 2000);
+      } else if (flag == true) {
+        flag = false;
+        st.textContent = "resume";
+        clearInterval(slideShow);
+      }
+    }
+
+    function left() {
+      if (i == 0) {
+        i = imgarr.length;
+      } else {
+        flag = false;
+        clearInterval(slideShow);
+        i--;
+        dis.src = imgarr[i];
+      }
+    }
+    function right() {
+      if (i == imgarr.length) {
+        i = 0;
+      } else {
+        flag = false;
+        clearInterval(slideShow);
+        i++;
+        dis.src = imgarr[i];
+      }
+    }
+  </script>
+</html>
