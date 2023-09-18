@@ -1,67 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Timer</title>
     <style>
-        h1{
-            text-align: center;
-        }
-        #display{
-            border: 1px solid black;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            width: 30%;
-            height: 60px;
-            align-items: center;
-            padding: auto;
-            font-size: x-large;
-            margin-bottom: 20px;
-        }
-        #inp{
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        #inp > input{
-            height: 30px;
-        }
-        #butt{
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        #butt > button{
-            width: 80px;
-            height: 30px;
-            font-size: large;
-            font-weight: bold;
-            background-color: aqua;
-        }
-
+      h1 {
+        text-align: center;
+      }
+      #display {
+        border: 1px solid black;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        height: 60px;
+        align-items: center;
+        padding: auto;
+        font-size: x-large;
+        margin-bottom: 20px;
+      }
+      #inp {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      #inp > input {
+        height: 30px;
+      }
+      #butt {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      #butt > button {
+        width: 80px;
+        height: 30px;
+        font-size: large;
+        font-weight: bold;
+        background-color: aqua;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>JS Timer</h1>
-    <div id="display">
-        dis
-    </div>
+    <div id="display">0</div>
     <div id="inp">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+      <input id="hour" type="number" placeholder="Hours" />
+      <input id="min" type="number" placeholder="Minutes" />
+      <input id="sec" type="number" placeholder="seconds" />
     </div>
     <div id="butt">
-        <button>start</button>
-        <button>pause</button>
-        <button>reset</button>
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
     </div>
-    
-</body>
-<script>
+  </body>
+  <script>
+    let hoursInput = document.getElementById("hour");
+    let minutesInput = document.getElementById("min");
+    let secondsInput = document.getElementById("sec");
 
-</script>
+    let startButton = document.getElementById("start");
+    let pauseButton = document.getElementById("pause");
+    let resetButton = document.getElementById("reset");
+    let timerdisplay = document.getElementById("display");
+
+
+    let timer = {
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      interval: null,
+      isPaused: false,
+    };
+    timer.hours = hoursInput.value;
+    timer.minutes = minutesInput.value;
+    timer.seconds = secondsInput.value;
+
+    startButton.addEventListener("click", () => {
+      if (timer.isPaused==false) {
+        timer.interval = setInterval(() => {
+         
+          timer.seconds--;
+
+         
+          if (timer.seconds < 0) {
+            timer.minutes--;
+            timer.seconds = 59;
+          }
+
+          if (timer.minutes < 0) {
+            timer.hours--;
+            timer.minutes = 59;
+          }
+
+       
+          if (timer.hours < 0) {
+            clearInterval(timer.interval);
+            timer.interval = null;
+          }
+
+          
+          timerdisplay.textContent = `${timer.hours}:${timer.minutes}:${timer.seconds}`;
+        }, 1000);
+      }
+    });
+
+ 
+    pauseButton.addEventListener("click", () => {
+      if (timer.interval) {
+        clearInterval(timer.interval);
+        timer.interval = null;
+        timer.isPaused = true;
+      }
+    });
+
+   
+    resetButton.addEventListener("click", () => {
+      if (timer.interval) {
+        clearInterval(timer.interval);
+        timer.interval = null;
+      }
+
+      timer.hours = 0;
+      timer.minutes = 0;
+      timer.seconds = 0;
+
+      timerdisplay.textContent = `${timer.hours}:${timer.minutes}:${timer.seconds}`;
+    });
+  </script>
 </html>
