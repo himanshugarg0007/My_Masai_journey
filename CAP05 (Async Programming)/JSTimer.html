@@ -45,7 +45,7 @@
   </head>
   <body>
     <h1>JS Timer</h1>
-    <div id="display">0</div>
+    <div id="display">0:0:0</div>
     <div id="inp">
       <input id="hour" type="number" placeholder="Hours" />
       <input id="min" type="number" placeholder="Minutes" />
@@ -67,7 +67,6 @@
     let resetButton = document.getElementById("reset");
     let timerdisplay = document.getElementById("display");
 
-
     let timer = {
       hours: 0,
       minutes: 0,
@@ -75,17 +74,17 @@
       interval: null,
       isPaused: false,
     };
-    timer.hours = hoursInput.value;
-    timer.minutes = minutesInput.value;
-    timer.seconds = secondsInput.value;
 
     startButton.addEventListener("click", () => {
-      if (timer.isPaused==false) {
+      if (timer.isPaused == false) {
+        timer.hours = hoursInput.value;
+        timer.minutes = minutesInput.value;
+        timer.seconds = secondsInput.value;
+
+        timer.isPaused = true;
         timer.interval = setInterval(() => {
-         
           timer.seconds--;
 
-         
           if (timer.seconds < 0) {
             timer.minutes--;
             timer.seconds = 59;
@@ -96,38 +95,60 @@
             timer.minutes = 59;
           }
 
-       
           if (timer.hours < 0) {
             clearInterval(timer.interval);
             timer.interval = null;
           }
 
-          
+          timerdisplay.textContent = `${timer.hours}:${timer.minutes}:${timer.seconds}`;
+        }, 1000);
+      }
+      hoursInput.value = "";
+      minutesInput.value = "";
+      secondsInput.value = "";
+    });
+
+    pauseButton.addEventListener("click", () => {
+      if (timer.isPaused) {
+        pauseButton.style.backgroundColor = "green"
+        pauseButton.textContent = "resume"
+        clearInterval(timer.interval);
+        timer.isPaused = false;
+      }
+      else{
+        pauseButton.style.backgroundColor = "aqua"
+        pauseButton.textContent = "Pause"
+        timer.isPaused = true;
+        timer.interval = setInterval(() => {
+          timer.seconds--;
+
+          if (timer.seconds < 0) {
+            timer.minutes--;
+            timer.seconds = 59;
+          }
+
+          if (timer.minutes < 0) {
+            timer.hours--;
+            timer.minutes = 59;
+          }
+
+          if (timer.hours < 0) {
+            clearInterval(timer.interval);
+            timer.interval = null;
+          }
+
           timerdisplay.textContent = `${timer.hours}:${timer.minutes}:${timer.seconds}`;
         }, 1000);
       }
     });
 
- 
-    pauseButton.addEventListener("click", () => {
-      if (timer.interval) {
-        clearInterval(timer.interval);
-        timer.interval = null;
-        timer.isPaused = true;
-      }
-    });
-
-   
     resetButton.addEventListener("click", () => {
-      if (timer.interval) {
-        clearInterval(timer.interval);
-        timer.interval = null;
-      }
+      clearInterval(timer.interval);
+      timer.interval = null;
 
-      timer.hours = 0;
-      timer.minutes = 0;
-      timer.seconds = 0;
-
+      timer.hours = hoursInput.value = 0;
+      timer.minutes = minutesInput.value = 0;
+      timer.seconds = secondsInput.value = 0;
       timerdisplay.textContent = `${timer.hours}:${timer.minutes}:${timer.seconds}`;
     });
   </script>
