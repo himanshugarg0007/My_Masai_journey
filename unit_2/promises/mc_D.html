@@ -42,28 +42,28 @@
   <body>
     <div id="contain">
       <div id="burger">
-        <input id="burger" type="checkbox" name="food_item" value="burger" /><label for="burger">burger</label>
+        <label for="burger"><input value="burger" type="checkbox">burger</label>
         <img
           src="https://www.shutterstock.com/shutterstock/photos/2298839953/display_1500/stock-photo-germany-mai-mcdonald-s-big-mac-2298839953.jpg"
           alt="burger_image"
         />
       </div>
       <div id="mc_nugget">
-        <input id="mc_nugget" type="checkbox" name="food_item" value="mc_nugget" /><label for="mc_nugget">mc_nugget</label>
+        <label for="mc_nugget"><input value="mc_nugget" type="checkbox">mc_nugget</label>
         <img
           src="https://www.shutterstock.com/shutterstock/photos/2317830697/display_1500/stock-photo-germany-jun-satisfying-snack-time-with-a-piece-box-of-chicken-mcnuggets-and-2317830697.jpg"
           alt="mc_nugget"
         />
       </div>
       <div id="happy_meal">
-        <input id="happy_meal" type="checkbox" name="food_item" value="happy_meal"/><label for="happy_meal">happy_meal</label>
+        <label for="happy_meal"><input value="happy_meal" type="checkbox">happy_meal</label>
         <img
           src="https://www.shutterstock.com/shutterstock/photos/659678686/display_1500/stock-photo-minsk-belarus-may-big-mac-hamburger-menu-in-a-mcdonald-s-restaurant-659678686.jpg"
           alt="happy_meal"
         />
       </div>
       <div id="fries">
-        <input id="fries" type="checkbox" name="food_item" value="fries"/><label for="fries">fries</label>
+        <label for="fries"><input value="fries" type="checkbox">fries</label>
         <img
           src="https://www.shutterstock.com/shutterstock/photos/2031369749/display_1500/stock-photo-bangkok-thailand-june-top-view-of-mcdonald-s-french-fries-xxl-size-with-tomato-sauce-2031369749.jpg"
           alt="fries"
@@ -75,17 +75,21 @@
   </body>
   <script>
     let dis = document.getElementById("display")
-    let burger = document.getElementById("burger")
-    let mc_nugget = document.getElementById("mc_nugget")
-    let happy_meal = document.getElementById("happy_meal")    
-    let fries = document.getElementById("fries")
-    console.log(burger.checked)
+    let box = document.querySelectorAll("input");
+    let checkedbox = Array.from(box)
+    let str = ""
+    let flag = true;
+
     function order(){
-      dis.textContent = "your or is -> "
-        if(burger || mc_nugget ||happy_meal ||fries){
-          dis.textContent = burger.innerText
+      if(flag){
+        flag = false;
+      for(let i=0; i<checkedbox.length; i++){
+        if(checkedbox[i].checked){
+          str += checkedbox[i].value + " , " 
         }
+      }
+      dis.textContent = `Your order is => ${str}`
+    }
     }
   </script>
 </html>
-<!-- || mc_nugget.checked ||happy_meal.checked ||fries.checked -->
