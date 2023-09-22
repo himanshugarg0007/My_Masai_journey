@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local_storage</title>
+    <style>
+        #input {
+            margin-bottom: 20px;
+        }
+        #display{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="input">
+        <label for="name">
+            Name : 
+            <input id="name" type="text" placeholder="Enter your name here">
+        </label>
+        <label for="age">
+            Age : 
+            <input id="age" type="text" placeholder="Enter your age here">
+        </label>
+        <button onclick="sub()">Submit</button>
+    </div>
+    <button onclick="show()">display your Details</button>
+    <div id="display"></div>
+</body>
+<script>
+    let name = document.getElementById("name");
+    let age = document.getElementById("age");
+    let dis = document.getElementById("display")
+    function sub(){
+        localStorage.setItem(name.value, age.value);
+        name.value = "";
+        age.value = "";
+    }
+    function show(){
+        let con = localStorage.getItem(name.value)
+        dis.textContent = con;
+    }
+</script>
+</html>

@@ -11,23 +11,33 @@
     </style>
 </head>
 <body>
+    <h2>please pay </h2>
+    <h2 id="req"></h2>
+    <button onclick="reqest()">Request payment</button>
+    
+
     <input id="input" type="number" placeholder="enter amount">
     <button onclick="makepay()">make payment</button>
     <div>
         <img id="dis" src="" alt="">
-        <h2 id="pay">please pay</h2>
+        <h2 id="pay"></h2>
     </div>
 </body>
 <script>
-    let maxamount = (Math.random() * 1000);
+
+    let maxamount = Math.floor(Math.random() * 1000);
+    let req = document.getElementById("req")
     let inp = document.getElementById("input");
     let dis = document.getElementById("dis")
     let payment = document.getElementById("pay");
+    function reqest(){
+        req.innerText = maxamount;
+    }
     function makepay (){
         function paymentnew(){
         return new Promise((res,rej)=>{
             setTimeout(() => {
-                if(inp.value <= maxamount){
+                if(inp.value == maxamount){
                 res()
             }
             else{
@@ -44,7 +54,7 @@
         dis.src = "https://images.vexels.com/media/users/3/141976/isolated/preview/8176e4a43370ce1216c04d7a8421877d-rejected-red-rounded.png"
         payment.innerText = `Your payment of Rs. ${inp.value} is rejected`
     })
-    
+    req.innerText = maxamount;
     }
 </script>
 </html>
