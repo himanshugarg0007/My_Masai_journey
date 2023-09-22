@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhonePe</title>
+    <style>
+        #dis{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <input id="input" type="number" placeholder="enter amount">
+    <button onclick="makepay()">make payment</button>
+    <div>
+        <img id="dis" src="" alt="">
+        <h2 id="pay">please pay</h2>
+    </div>
+</body>
+<script>
+    let maxamount = (Math.random() * 1000);
+    let inp = document.getElementById("input");
+    let dis = document.getElementById("dis")
+    let payment = document.getElementById("pay");
+    function makepay (){
+        function paymentnew(){
+        return new Promise((res,rej)=>{
+            setTimeout(() => {
+                if(inp.value <= maxamount){
+                res()
+            }
+            else{
+                rej()
+            }
+            }, 2000);
+        })
+    }
+    paymentnew().then(()=>{
+        dis.src = "https://cdn-icons-png.flaticon.com/512/5709/5709755.png"
+        payment.innerText = `Your payment of Rs. ${inp.value} is successfull`
+    })
+    .catch(()=>{
+        dis.src = "https://images.vexels.com/media/users/3/141976/isolated/preview/8176e4a43370ce1216c04d7a8421877d-rejected-red-rounded.png"
+        payment.innerText = `Your payment of Rs. ${inp.value} is rejected`
+    })
+    
+    }
+</script>
+</html>

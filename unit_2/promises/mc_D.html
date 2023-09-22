@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mc_D</title>
+    <style>
+      #contain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+      }
+      #contain > div > img {
+        width: 150px;
+      }
+      input[type="checkbox"] {
+        margin-bottom: 5px;
+      }
+      #order-food {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        font-weight: bold;
+        padding: 10px;
+        background-color: gray;
+        color: white;
+      }
+      #display{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        border: 1px solid red;
+        height: 50px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contain">
+      <div id="burger">
+        <input id="burger" type="checkbox" name="food_item" value="burger" /><label for="burger">burger</label>
+        <img
+          src="https://www.shutterstock.com/shutterstock/photos/2298839953/display_1500/stock-photo-germany-mai-mcdonald-s-big-mac-2298839953.jpg"
+          alt="burger_image"
+        />
+      </div>
+      <div id="mc_nugget">
+        <input id="mc_nugget" type="checkbox" name="food_item" value="mc_nugget" /><label for="mc_nugget">mc_nugget</label>
+        <img
+          src="https://www.shutterstock.com/shutterstock/photos/2317830697/display_1500/stock-photo-germany-jun-satisfying-snack-time-with-a-piece-box-of-chicken-mcnuggets-and-2317830697.jpg"
+          alt="mc_nugget"
+        />
+      </div>
+      <div id="happy_meal">
+        <input id="happy_meal" type="checkbox" name="food_item" value="happy_meal"/><label for="happy_meal">happy_meal</label>
+        <img
+          src="https://www.shutterstock.com/shutterstock/photos/659678686/display_1500/stock-photo-minsk-belarus-may-big-mac-hamburger-menu-in-a-mcdonald-s-restaurant-659678686.jpg"
+          alt="happy_meal"
+        />
+      </div>
+      <div id="fries">
+        <input id="fries" type="checkbox" name="food_item" value="fries"/><label for="fries">fries</label>
+        <img
+          src="https://www.shutterstock.com/shutterstock/photos/2031369749/display_1500/stock-photo-bangkok-thailand-june-top-view-of-mcdonald-s-french-fries-xxl-size-with-tomato-sauce-2031369749.jpg"
+          alt="fries"
+        />
+      </div>
+    </div>
+    <div id="display">your order display here</div>
+    <button onclick="order()" id="order-food">Order Food</button>
+  </body>
+  <script>
+    let dis = document.getElementById("display")
+    let burger = document.getElementById("burger")
+    let mc_nugget = document.getElementById("mc_nugget")
+    let happy_meal = document.getElementById("happy_meal")    
+    let fries = document.getElementById("fries")
+    console.log(burger.checked)
+    function order(){
+      dis.textContent = "your or is -> "
+        if(burger || mc_nugget ||happy_meal ||fries){
+          dis.textContent = burger.innerText
+        }
+    }
+  </script>
+</html>
+<!-- || mc_nugget.checked ||happy_meal.checked ||fries.checked -->
