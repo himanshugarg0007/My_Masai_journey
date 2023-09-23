@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Displaying User Data</title>
+    <style>
+      #main {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        border: 1px solid black;
+        margin: auto;
+        padding: 10px;
+      }
+      .p_card {
+        border: 1px solid gray;
+        padding: 10px;
+      }
+      .p_card > img {
+        width: 100%;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+  <script>
+    let url = `https://reqres.in/api/users`;
+    let mainbox = document.getElementById("main");
+    async function init() {
+      try {
+        let res = await fetch(url);
+        let data = await res.json();
+        print(data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    let print = (data) => {
+      data.forEach((product) => {
+        let p_card = document.createElement("div");
+        p_card.className = "p_card";
+
+        let p_avatar = document.createElement("img");
+        p_avatar.src = product.avatar;
+
+        let p_id = document.createElement("h1");
+        p_id.textContent = product.id;
+
+        let p_email = document.createElement("p");
+        p_email.textContent = product.email;
+
+        let p_firstname = document.createElement("p");
+        p_firstname.textContent = product.first_name;
+
+        let p_lastname = document.createElement("p");
+        p_lastname.textContent = product.last_name;
+
+        p_card.append(p_avatar, p_id, p_firstname, p_lastname, p_email);
+        mainbox.append(p_card);
+      });
+    };
+    init();
+  </script>
+</html>
