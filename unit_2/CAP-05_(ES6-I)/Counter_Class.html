@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Class</title>
+    <style>
+      #display {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+        height: 50px;
+        width: 100px;
+        border: 2px solid grey;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+      #op {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+        width: 40%;
+        gap: 20px;
+      }
+      #op > button{
+        background-color: antiquewhite;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display">0</div>
+    <div id="op">
+      <button onclick="dec()">Decrement</button>
+      <button id="st" onclick="start()">Start</button>
+      <button onclick="inc()">Increment</button>
+    </div>
+  </body>
+  <script>
+    let dis = document.getElementById("display");
+    let st = document.getElementById("st");
+    let flage = true;
+    let interval = null;
+    let sec = 0;
+
+    let start = ()=>{
+      if(flage){
+        flage = false;
+        st.style.backgroundColor = "red";
+        st.textContent = "pause";
+        interval = setInterval(()=>{
+          sec++;
+          dis.textContent = sec;
+        },1000)
+      }
+      else{
+        flage=true;
+        st.textContent = "Resume"
+        st.style.backgroundColor = "antiquewhite";
+        clearInterval(interval)
+      }
+    }
+    let inc = ()=>{
+      flage=false;
+      clearInterval(interval);
+      sec++;
+      dis.textContent = sec;
+    }
+    let dec = ()=>{
+      flage=false;
+      clearInterval(interval);
+      sec--;
+      dis.textContent = sec;
+    }
+
+  </script>
+</html>
