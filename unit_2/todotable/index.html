@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo table</title>
+    <style>
+      #root {
+        display: flex;
+        justify-content: center;
+        background-color: azure;
+        padding: 10px;
+      }
+      #tmain {
+        border: 1px solid black;
+        padding: 10px;
+        
+      }
+      th{
+        background-color: cornflowerblue;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        align-items: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <table id="tmain">
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Completed</th>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
