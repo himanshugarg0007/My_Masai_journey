@@ -1,14 +1,42 @@
 let url = `https://fakestoreapi.com/products`;
 let mainbox = document.getElementById("main");
+let cate = document.getElementById("category");
 async function init() {
   try {
     let res = await fetch(url);
     let data = await res.json();
     console.log(data);
-    print(data);
+    let data2;
+    if (cate.value == "men's clothing") {
+      data2 = data.filter((ele) => {
+        return ele.category == "men's clothing";
+      });
+    }
+    else if (cate.value == "jewelery") {
+      data2 = data.filter((ele) => {
+        return ele.category == "jewelery";
+      });
+    }
+    else if (cate.value == "electronics") {
+      data2 = data.filter((ele) => {
+        return ele.category == "electronics";
+      });
+    }
+    else if (cate.value == "women's clothing") {
+      data2 = data.filter((ele) => {
+        return ele.category == "women's clothing";
+      });
+    }
+    else{
+      print(data)
+    }
+    print(data2);
   } catch (error) {
     console.log(error);
   }
+}
+function show(){
+  location.reload()
 }
 let print = (data) => {
   data.forEach((product) => {
@@ -36,7 +64,15 @@ let print = (data) => {
     let p_description = document.createElement("p");
     p_description.textContent = `Description : ${product.description}`;
 
-    p_card.append(p_avatar, p_category, p_rating, p_id, p_title, p_price, p_description);
+    p_card.append(
+      p_avatar,
+      p_category,
+      p_rating,
+      p_id,
+      p_title,
+      p_price,
+      p_description
+    );
     mainbox.append(p_card);
   });
 };
