@@ -21,23 +21,47 @@
     }
     #main{
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       width: 90%;
       margin: auto;
       padding: 20px;
+    }
+    #detail{
+      background-color: burlywood;
+      padding: 10px;
+      height: auto;
+      border-radius: 5px 0px 0px 5px;
+    }
+    #detail > h1{
+      color: rgb(87, 31, 139);
+    }
+    body{
+      background-color: rgb(219, 203, 182);
+    }
+    input{
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: large;
+    }
+    button{
+      width: 80px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: large;
     }
   </style>
 </head>
 
 <body>
   <label for="search">
-    <input type="text" placeholder="enter city">
+    <input type="text" placeholder="enter city" id="city" >
+    <input type="text" placeholder="country code" value="IN" id="country">
     <button onclick="show()">Search</button>
+    <button onclick="reset()">Reset</button>
   </label>
   <div id="main">
-    <div id="detail">
-    
-    </div>
+    <div id="detail"></div>
     <div class="mapouter">
       <div class="gmap_canvas">
         <iframe width="600" height="500" id="gmap_canvas"
