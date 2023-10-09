@@ -1,5 +1,4 @@
-// let main = document.getElementById("root");
-// main.textContent = "hello world"
+
 
 class custom_array {
   constructor(...args) {
