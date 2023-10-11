@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omdb Movie App</title>
+    <link rel="icon" href="https://w7.pngwing.com/pngs/826/383/png-transparent-imdb-actor-film-television-hollywood-croods-celebrities-text-rectangle-thumbnail.png">
+    <style>
+        body{
+            background-color: blanchedalmond;
+        }
+        #main{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            margin: auto;
+            align-items: center;
+        }
+        #main > div{
+            text-wrap: 10px;
+            padding: 10px;
+        }
+        #card > img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <label for="search">search movie by title : <input id="movie" type="text" placeholder="enter movie title"></label>
+    <!-- <button onclick="searchbutt()">search</button> -->
+    <div id="main"></div>
+</body>
+<script src="./index.js"></script>
+</html>
