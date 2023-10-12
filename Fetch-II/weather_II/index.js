@@ -17,7 +17,6 @@ function show(){
   try {
     let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchcity.value},${country.value}&appid=53e18bd79a3b51b21968106541a614ce`);
     let data = await res.json();
-    // console.log(data);
     
     printdata(data);
   } catch (error) {
@@ -37,15 +36,13 @@ let printdata = (data) => {
   lat = +data.coord.lat;
   lon = +data.coord.lon;
   detail.append(city, weather, temp, feels);
-console.log(lat,lon)
 };
  
 
 let forcast = async ()=>{
   try {
-    let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=28.6667&lon=77.2167&appid=53e18bd79a3b51b21968106541a614ce`)
+    let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=53e18bd79a3b51b21968106541a614ce`)
     let data = await res.json();
-    console.log(data);
     printfor(data);
     
   } catch (error) {
