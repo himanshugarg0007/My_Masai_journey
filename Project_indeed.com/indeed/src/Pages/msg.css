@@ -1,0 +1,65 @@
+
+#message{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    gap: 10px;
+    height:max-content;
+    border-radius: 10px;
+    padding: 10px;
+}
+#message > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height:800px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#msghead{
+    width: 40%;
+}
+#msghead select{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+}
+#msgbody{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width: 750px) {
+    #message{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        gap: 10px;
+        height:max-content;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    #message > div{
+        gap: 10px;
+        border-radius: 10px;
+        height: max-content;
+        padding: 10px;
+        width: 100%;
+    }
+    #msghead{
+        width: 100%;
+    }
+    #msgbody{
+        width: 100%;
+        gap: 10px;
+    }
+    
+}

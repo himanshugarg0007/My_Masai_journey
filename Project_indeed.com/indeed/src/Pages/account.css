@@ -1,0 +1,17 @@
+.dropdown-item{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    margin: 10px auto;
+}
+.dropdown-item img{
+    max-width: 20px;
+    margin-right: 20px;
+    opacity: 0.5;
+    transition: var(--speed);
+}
+.dropdown-item a {
+    max-width: 100px;
+    margin-left: 10px;
+    transition: var(--speed);
+}

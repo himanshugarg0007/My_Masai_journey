@@ -1,0 +1,274 @@
+.jobbutton{
+    font-size: larger;
+    font-weight: bold;
+    margin: 10px;
+    border: none;
+    background-color: white;
+}
+.jobbutton:hover{
+    text-decoration: underline blue 2px solid;
+    cursor: pointer;
+}
+.job{
+    margin: auto;
+    display: inline;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    height: 100px;
+    position: bottom;
+    bottom: 0;
+    width: 100%;
+}
+#home{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+
+}
+#home > input{
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#home > button{
+    height: 45px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #164081;
+    color: white;
+}
+#companyreviewMain{
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+#findInput{
+    display: flex;
+}
+
+#popularcompanylist{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+#salaryguideMain{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #0D2D5E;
+    color: aliceblue;
+    border-radius: 0px 0px 70px 0px;
+}
+#salaryInp input{
+    border: 0.1px solid black;
+    background-color: white;
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#salaryInp{
+    display: flex;
+    gap: 10px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px 40px 10px 10px;
+    background-color: white;
+    color: black;
+}
+#salaryInp button{
+    height: 45px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #164081;
+    color: white;
+}
+#login{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin: auto;
+    padding: 20px;
+    gap: 10px;
+    width: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+#login button{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    
+}
+#salaryguideMain2{
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+#industrylist{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+#industrylist > div{
+    border: 0.01px solid rgb(34, 34, 63);
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+#industrylist > div:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+#empORpost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+#empORpost > div{
+    width: 50%;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#empORpost button{
+    width: fit-content;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    color:#164081;
+    border: 1px solid #164081;
+}
+#empORpost button:hover{
+    background-color: #e9ecf1;
+}
+#empORpost button:active{
+    background-color: #164081;
+    color: white;
+}
+#empORpost img{
+    width: 100%;
+}
+@media all and (max-width: 950px) {
+    #home{
+        flex-direction: column;
+    }
+    #empORpost{
+        flex-direction: column;
+    }
+    #home > input{
+        width: 100%;
+    }
+    #home > button{
+        width: 80%;
+        margin-left: 0%;
+    }
+    #companyreviewMain{
+        width: 100%;
+    }
+    #findInput{
+        flex-direction: column;
+    }
+    #findInput > label{
+        width: 100%;
+    }
+    #findInput > button{
+        width: 100%;
+    }
+    #popularcompanylist{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #salaryguideMain{
+        width: 100%;
+    }
+    #salaryInp{
+        flex-direction: column;
+    }
+    #salaryInp input{
+        width: 90%;
+    }
+    #salaryInp button{
+        width: 100%;
+    }
+    #salaryguideMain2{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #popularcompanylist{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #empORpost{
+        flex-direction: column;
+    }
+    #salaryguideMain{
+        width: 100%;
+    }
+    #salaryInp{
+        flex-direction: column;
+    }
+    #salaryInp input{
+        width: 90%;
+    }
+    #salaryInp button{
+        width: 100%;
+    }
+    #salaryguideMain2{
+        width: 100%;
+    }
+
+}
+    

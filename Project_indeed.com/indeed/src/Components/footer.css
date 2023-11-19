@@ -1,0 +1,25 @@
+#foot{
+    align-items: center;
+    height: 150px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+#foot > div{
+    margin: 0 20px;
+    gap: 10px;
+}
+#foot > div a{
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+    font-size: small;
+}
+#foot > div a:hover{
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+    text-decoration: underline;
+}
