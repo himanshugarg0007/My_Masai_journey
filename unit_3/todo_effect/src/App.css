@@ -1,0 +1,48 @@
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+#page-nav {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  gap: 10px;
+  font-size: large;
+  margin-top: 10px;
+}
+#page-nav > button {
+  font-size: large;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: goldenrod;
+  border-radius: 5px;
+}
+#tab {
+  margin: auto;
+}
+#tab > tr > th {
+  border: 1px solid black;
+  padding: 5px;
+}
+#inp {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#inp > input {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: 3px solid violet;
+  font-size: 18px;
+}
+#inp > button {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  border: 3px solid violet;
+  font-size: 18px;
+  align-content: center;
+}
